@@ -31,19 +31,14 @@ time: 0.2477829
 🧩 Penjabaran Tiap Bagian Regex:
 
 1. `\.(\d{4}-\d{2}-\d{2}_\d{2}:\d{2}:\d{2})`
+
    `\.`= mencocokkan titik literal dalam nama file `(nova-api.log.1.2017...)`
-
-`(\d{4}-\d{2}-\d{2}_\d{2}:\d{2}:\d{2})` = mencocokkan `2017-05-16_13:53:08` (timestamp dari nama file)
-
-`\d{4}` = tahun
-
-`-` = literal dash
-
-`\d{2}` = bulan/hari/jam/menit/detik
-
-`_` = literal underscore
-
-`:` = literal colon
+   `(\d{4}-\d{2}-\d{2}_\d{2}:\d{2}:\d{2})` = mencocokkan `2017-05-16_13:53:08` (timestamp dari nama file)
+   `\d{4}` = tahun
+   `-` = literal dash
+   `\d{2}` = bulan/hari/jam/menit/detik
+   `_` = literal underscore
+   `:` = literal colon
 
 2. `(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d{3})`
    Ini adalah **timestamp log di dalam isi file**
@@ -55,9 +50,9 @@ time: 0.2477829
    Mencocokkan **PID (Process ID)** seperti `25746`
 
 4. `(INFO|DEBUG|ERROR|WARNING|CRITICAL)`
+   
    Mencocokkan **level log**
-
-Gunakan **alternatif (|)** untuk mencocokkan salah satu kata
+   Gunakan **alternatif (|)** untuk mencocokkan salah satu kata
 
 5. `([\w\.]+)`
    Mencocokkan nama modul Python: `nova.osapi_compute.wsgi.server`
@@ -107,7 +102,9 @@ Mencocokkan HTTP Method
 Status HTTP: `200`, `404`, dll
 
 12. `len: (\d+)`
+
     Panjang (bytes) dari response → `1893`
 
 13. `time: ([0-9\.]+)`
+
     Waktu respons (dalam detik) → `0.2477829`
