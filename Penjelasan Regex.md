@@ -104,14 +104,15 @@ time: 0.2477829
    `[^ ]+` = semua karakter kecuali spasi
 
 10. `HTTP\/([0-9.]+)"`
-    HTTP Version → `1.1`
-
+   
+   HTTP Version → `1.1`
+   
    `\/` = escape `/`
-
+   
    `[0-9.]+` = angka + titik
 
 11. status: `(\d{3})`
-
+   
    Status HTTP: `200`, `404`, dll
 
 12. `len: (\d+)`
